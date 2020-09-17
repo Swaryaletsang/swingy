@@ -1,0 +1,14 @@
+=> start and fully set up a new java project using the Maven build tool (learn Maven and its uses)
+=> Dependencies that I might use NB: POM.xml
+    ->javax.validation 
+    -> lombok annotation
+    -> hibernate validator from javax validator
+    -> slf4j-api and slf4j-simple
+=> MVC DESIGN PATTERN
+=> BUILDER DESIGN PATTERN
+
+==> Javax.swingy library * (learn and use)
+
+You need to implement a text-based RPG based on the gameplay and conditions described below.
+The program needs to follow the Model-View-Controller architecture 
+and allows witching between the console view and GUI view.

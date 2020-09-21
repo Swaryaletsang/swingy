@@ -12,3 +12,10 @@
 You need to implement a text-based RPG based on the gameplay and conditions described below.
 The program needs to follow the Model-View-Controller architecture 
 and allows witching between the console view and GUI view.
+
+# USE THE BUILDER DESIGN PATTERN TO CREATE HEROs and VILLAINS
+# MVC:
+    Model - holds data passed at the view and does all the functions and returns
+    View - recieves data and returns data (interface SWINGY)
+    Controller - connects the M & V acts as the caller for both (call the Controller in the main)
+# 

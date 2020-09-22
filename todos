@@ -18,4 +18,9 @@ and allows witching between the console view and GUI view.
     Model - holds data passed at the view and does all the functions and returns
     View - recieves data and returns data (interface SWINGY)
     Controller - connects the M & V acts as the caller for both (call the Controller in the main)
-# 
+# dependencies are searched from mvn repo.com copy paste in POM then use them (easy as ABC) NB: learn
+  how to utilise a specific dependency
+
+# last but  not least (Javax.swingy library)
+
+# Finally implement the RPG gameplay

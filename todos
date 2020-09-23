@@ -24,3 +24,5 @@ and allows witching between the console view and GUI view.
 # last but  not least (Javax.swingy library)
 
 # Finally implement the RPG gameplay
+
+***THIS PROJECT IS ACTUALLY A CRUD WITHOUT THE DELETE (use mysql database)********

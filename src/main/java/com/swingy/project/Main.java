@@ -1,8 +1,8 @@
 package com.swingy.project;
 
-import java.sql.*;
+// import java.sql.*;
 
-import org.slf4j.*;
+// import org.slf4j.*;
 
 /**
  * Hello world!
@@ -12,19 +12,20 @@ public class Main
 {
     public static void main( String[] args )
     {
-        try {
-            String driver = "com.mysql.cj.jdbc.Driver";
-            String url = "jdbc:mysql://localhost:3306";
-            String username = "root";
+        DBconn.databaseCon();
+        // try {
+        //     String driver = "com.mysql.cj.jdbc.Driver";
+        //     String url = "jdbc:mysql://localhost:3306";
+        //     String username = "root";
 
-            Class.forName(driver);
-            Connection con = DriverManager.getConnection(url, username, "");
+        //     Class.forName(driver);
+        //     Connection con = DriverManager.getConnection(url, username, "");
 
-            System.out.println("connection successfulllllllll");
-        } catch (Exception e) {
-            //TODO: handle exception
-            e.getStackTrace();
-        }
+        //     System.out.println("connection successfulllllllll");
+        // } catch (Exception e) {
+        //     //TODO: handle exception
+        //     e.getStackTrace();
+        // }
         // Logger log = LoggerFactory.getLogger(Main.class);
 
         // if (args[0].equals("console")) {

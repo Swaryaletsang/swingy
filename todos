@@ -26,3 +26,12 @@ and allows witching between the console view and GUI view.
 # Finally implement the RPG gameplay
 
 ***THIS PROJECT IS ACTUALLY A CRUD WITHOUT THE DELETE (use mysql database)********
+
+****VARIABLES******
+•Hero name (String)
+•Hero class (String)
+•Level (number)
+•Experience (number)
+•Attack (String)
+•Defense (String)
+•Hit Points {NOT INCLUDED}

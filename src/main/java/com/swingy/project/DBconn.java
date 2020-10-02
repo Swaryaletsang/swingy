@@ -3,7 +3,7 @@ package com.swingy.project;
 import java.sql.*;
 
 public class DBconn {
-    private static final String EMPLOYEE_TABLE = "create table IF NOT EXISTS MyEmployees3 ( "
+    private static final String EMPLOYEE_TABLE = "create table IF NOT EXISTS Heroes ( "
       + "   id INT PRIMARY KEY, firstName VARCHAR(20), lastName VARCHAR(20), "
       + "   title VARCHAR(20), salary INT )";
     
@@ -23,8 +23,8 @@ public class DBconn {
         try {
           conn = getConnection();
           stmt = conn.createStatement();
-          stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS Employess");
-          stmt.executeUpdate("USE Employess");
+          stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS Swingy");
+          stmt.executeUpdate("USE swingy");
           stmt.executeUpdate(EMPLOYEE_TABLE);
         //   stmt.executeUpdate("insert into MyEmployees3(id, firstName) values(100, 'A')");
         //   stmt.executeUpdate("insert into MyEmployees3(id, firstName) values(200, 'B')");

@@ -35,3 +35,16 @@ and allows witching between the console view and GUI view.
 •Attack (String)
 •Defense (String)
 •Hit Points {NOT INCLUDED}
+
+copy RyiSnow youtubers game 
+NB=>focus on GUI until its finished
+check slack for answers to question I asked yesterday
+
+lombok => helps with boiler plate code e.g getters and setters etc
+javax.validation => helps with simple validations e.g to check if string is null (@NotNull)
+
+
+1 Creation GUI
+  name
+  weapon
+  armor

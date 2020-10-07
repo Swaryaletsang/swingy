@@ -1,7 +1,10 @@
 package com.swingy.project.Model;
 
-public class HeroBuilder {
+import lombok.Setter;
+
+public class HeroBuilder {;
     private String name;
+    private int id;
     private int level;
     private int experience;
     private int attack;
@@ -12,6 +15,11 @@ public class HeroBuilder {
 
     public HeroBuilder setName(String name){
         this.name = name;
+        return this;
+    }
+
+    public HeroBuilder setID(int id){
+        this.id = id;
         return this;
     }
 
@@ -51,6 +59,6 @@ public class HeroBuilder {
     }
 
     public Hero getHero(){
-        return new Hero(name, level, experience, attack, defence, hitPoints, weapon, armor);
+        return new Hero(name, id, level, experience, attack, defence, hitPoints, weapon, armor);
     }
 }

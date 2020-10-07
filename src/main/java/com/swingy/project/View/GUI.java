@@ -2,11 +2,13 @@ package com.swingy.project.View;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.*;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
@@ -66,31 +68,11 @@ public class GUI {
         window.add(CreatePanel);
         pName = new JLabel("NAME:");
         name = new JTextField(15);
-        ArmChoice = new JLabel("Choose Armor:");
-        WeapChoice = new JLabel("Choose Weapon:");
         btnCreate = new JButton("Create Player");
-        w1 = new JRadioButton("Knife");
-        w2 = new JRadioButton("Sword");
-        w3 = new JRadioButton("Bow and Arrow");
-        w = new ButtonGroup();
-        w.add(w1);
-        w.add(w2);
-        w.add(w3);
-        a1 = new JRadioButton("Steel armor");
-        a2 = new JRadioButton("Leather armor");
-        a = new ButtonGroup();
-        a.add(a1);
-        a.add(a2);
+
 
         CreatePanel.add(pName);
         CreatePanel.add(name);
-        CreatePanel.add(WeapChoice);
-        CreatePanel.add(w1);
-        CreatePanel.add(w2);
-        CreatePanel.add(w3);
-        CreatePanel.add(ArmChoice);
-        CreatePanel.add(a1);
-        CreatePanel.add(a2);
         CreatePanel.add(btnCreate);
 
 
@@ -167,5 +149,17 @@ public class GUI {
         window.add(playerPanel);
 
         window.setVisible(true);
+    }
+
+    public String getName(){
+        return (name.getText());
+    }
+
+    public void createBtnListener(ActionListener listenToCreateBtn){
+        this.btnCreate.addActionListener(listenToCreateBtn);
+    }
+
+    public void checkErr(String errMsg){
+        JOptionPane.showInputDialog(this, errMsg);
     }
 }

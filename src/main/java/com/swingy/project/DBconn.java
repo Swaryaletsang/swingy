@@ -4,8 +4,8 @@ import java.sql.*;
 
 public class DBconn {
     private static final String EMPLOYEE_TABLE = "create table IF NOT EXISTS Heroes ( "
-      + "   id INT PRIMARY KEY, firstName VARCHAR(20), lastName VARCHAR(20), "
-      + "   title VARCHAR(20), salary INT )";
+      + "   id INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(20), weapon VARCHAR(20), "
+      + "   armor VARCHAR(20), hp INT, level INT, experience INT, attack INT, defence INT)";
     
     public static Connection getConnection() throws Exception {
     String driver = "com.mysql.cj.jdbc.Driver";
@@ -42,7 +42,7 @@ public class DBconn {
           try {
             stmt.close();
             conn.close();
-          } catch (SQLException e) {
+          } catch (Exception e) {
             e.printStackTrace();
            }
          }

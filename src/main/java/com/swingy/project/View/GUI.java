@@ -22,12 +22,12 @@ public class GUI {
      */
     JFrame window;
     public JPanel titleNamePanel, startBtnJPanel, storyTextPanel, choiceBtnPanel, playerPanel, CreatePanel;
-    JLabel titleNameLJLabel, hplbl, hpNumlbl, weaponlbl, weapNamelbl, pName, WeapChoice, ArmChoice;
-    JButton startButton, chBtn1, chBtn2, chBtn3, chBtn4, btnCreate;
-    JTextArea storyTextArea;
-    JTextField name;
-    JRadioButton w1,w2,w3,a1,a2;
-    ButtonGroup a, w;
+    public JLabel titleNameLJLabel, hplbl, hpNumlbl, weaponlbl, weapNamelbl, pName, WeapChoice, ArmChoice;
+    public JButton startButton, chBtn1, chBtn2, chBtn3, chBtn4, btnCreate;
+    public JTextArea storyTextArea;
+    public JTextField name;
+    // JRadioButton w1,w2,w3,a1,a2;
+    // ButtonGroup a, w;
 
 
     public void createUI(ChoiceHandler cHandler) {
@@ -63,12 +63,13 @@ public class GUI {
 
         //Create player panel
         CreatePanel = new JPanel();
-        CreatePanel.setBounds(100, 100, 600, 500);
+        CreatePanel.setBounds(100, 200, 400, 100);
         CreatePanel.setBackground(Color.red);
         window.add(CreatePanel);
         pName = new JLabel("NAME:");
         name = new JTextField(15);
         btnCreate = new JButton("Create Player");
+        btnCreate.setActionCommand("create");
 
 
         CreatePanel.add(pName);
@@ -82,7 +83,7 @@ public class GUI {
         storyTextPanel.setBackground(Color.CYAN);
         window.add(storyTextPanel);
 
-        storyTextArea = new JTextArea("yhis is the story text area");
+        storyTextArea = new JTextArea("This is the story text area");
         storyTextArea.setBounds(100, 100, 600, 250);
         storyTextArea.setBackground(Color.LIGHT_GRAY);
         storyTextArea.setForeground(Color.BLACK);
@@ -130,7 +131,7 @@ public class GUI {
         choiceBtnPanel.add(chBtn4);
 
         playerPanel = new JPanel();
-        playerPanel.setBounds(100, 100, 600, 250);
+        playerPanel.setBounds(100, 50, 600, 250);
         playerPanel.setBackground(Color.CYAN);
         
 

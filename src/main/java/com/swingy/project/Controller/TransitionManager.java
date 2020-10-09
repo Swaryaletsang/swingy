@@ -18,6 +18,7 @@ public class TransitionManager {
         ui.choiceBtnPanel.setVisible(false);
         ui.storyTextPanel.setVisible(false);
         ui.playerPanel.setVisible(false);
+        ui.CreatePanel.setVisible(false);
     }
 
     public void showGameScreen(){
@@ -31,4 +32,14 @@ public class TransitionManager {
         ui.playerPanel.setVisible(false);
         ui.CreatePanel.setVisible(true);
     }
+
+	public void hideCreatePanel() {
+        ui.choiceBtnPanel.setVisible(true);
+        ui.storyTextPanel.setVisible(true);
+        ui.playerPanel.setVisible(true);
+        // this.ui.titleNamePanel.setVisible(false);
+        // this.ui.startBtnJPanel.setVisible(false);
+        ui.CreatePanel.setVisible(false);
+        System.out.println("Im here");
+	}
 }

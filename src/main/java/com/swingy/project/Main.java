@@ -10,12 +10,13 @@ public class Main
 {
     public static void main( String[] args ) throws Exception
     {
-        DBconn.databaseCon();
+        //DBconn.databaseCon();
         PlayerModel model = new PlayerModel();
         // model.getAllPlayers();
         GUI theView = new GUI();
         GameController controller = new GameController(theView);
         CreateController create = new CreateController(theView, model);
+        
 
 //        theView.setVisible(true);
 //        DBconn.databaseCon();

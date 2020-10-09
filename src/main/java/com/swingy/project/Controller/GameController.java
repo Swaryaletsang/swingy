@@ -2,12 +2,14 @@ package com.swingy.project.Controller;
 
 import java.awt.event.*;
 
+import com.swingy.project.Model.GameComponents.Narator;
 import com.swingy.project.View.GUI;
 
 public class GameController {
     private GUI theView;
     ChoiceHandler cHandler = new ChoiceHandler();
     TransitionManager tm;
+    Narator narator;
 
     // private GameModel data;
 
@@ -16,7 +18,7 @@ public class GameController {
         this.theView.createUI(cHandler);
         tm = new TransitionManager(theView);
         tm.showStartScreen();
-
+        this.narator = new Narator(theView);
     }
 
     public class ChoiceHandler implements ActionListener {
@@ -28,6 +30,7 @@ public class GameController {
             switch (yourChoice) {
                 case "start":
                         tm.showGameScreen();
+                        narator.townGate();
                     break;
                 case "b1":
                     //tm.showGameScreen();

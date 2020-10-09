@@ -64,25 +64,74 @@ public class PlayerModel {
         }
     }
 
-    public Boolean createNewPlayer(Hero hero){
+    public void createNewPlayer(Hero hero){
 
+        Connection conn = null;
+        Statement stmt = null;
         try {
-            PreparedStatement ps = DBconn.getConnection().prepareStatement(
-                "INSERT INTO heroes VALUES(?,?,?,?,?,?,?,?)");
-            ps.setString(1, hero.getName());
-            ps.setString(2, hero.getWeapon());
-            ps.setString(3, hero.getArmor());
-            ps.setInt(4, hero.getHitPoints());
-            ps.setInt(5, hero.getLevel());
-            ps.setInt(6, hero.getExperience());
-            ps.setInt(7, hero.getAttack());
-            ps.setInt(8, hero.getDefence());
-            return (ps.executeUpdate() > 0);
+          conn = DBconn.getConnection();
+          stmt = conn.createStatement();
+          stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS Swingy");
+          stmt.executeUpdate("USE swingy");
+          stmt.executeUpdate(DBconn.getEMPLOYEE_TABLE());
+          stmt.executeUpdate("INSERT INTO heroes(Name, weapon, armor, hp, level, experience, attack, defence) VALUES("+hero.getName()+","+hero.getWeapon()+","+hero.getArmor()+","+hero.getHitPoints()+","+hero.getLevel()+","+hero.getExperience()+","+hero.getAttack()+","+hero.getDefence()+")");
+        //   stmt.executeUpdate("insert into MyEmployees3(id, firstName) values(200, 'B')");
+        //   System.out.println("CreateEmployeeTableMySQL: main(): table created.");
+            } catch (ClassNotFoundException e) {
+          System.out.println("error: failed to load MySQL driver.");
+          e.printStackTrace();
+        } catch (SQLException e) {
+          System.out.println("error: failed to create a connection object.");
+          e.printStackTrace();
         } catch (Exception e) {
-            //TODO: handle exception
-            return false;
+          System.out.println("other error:");
+          e.printStackTrace();
+        } finally {
+          try {
+            stmt.close();
+            conn.close();
+          } catch (Exception e) {
+            e.printStackTrace();
+           }
+         }
         }
-    }
+        // Connection conn = null;
+
+        // try {
+        //     PreparedStatement ps = DBconn.getConnection().prepareStatement(
+        //         "INSERT INTO heroes(Name, weapon, armor, hp, level, experience, attack, defence) VALUES(swary,knife,armor,20,100,12,16,23)");
+        //     // ps.setString(1, hero.getName());
+        //     // System.out.println(hero.getName());
+        //     // ps.setString(2, hero.getWeapon());
+        //     // ps.setString(3, hero.getArmor());
+        //     // ps.setInt(4, hero.getHitPoints());
+        //     // ps.setInt(5, hero.getLevel());
+        //     // ps.setInt(6, hero.getExperience());
+        //     // ps.setInt(7, hero.getAttack());
+        //     // ps.setInt(8, hero.getDefence());
+        //     return (ps.executeUpdate() > 0);
+
+        //     //using statement
+        //     //return (ps.executeUpdate("INSERT INTO heroes VALUES("+hero.getName()+","+hero.getWeapon()+","+hero.getArmor()+","+hero.getHitPoints()+","+hero.getLevel()+","+hero.getExperience()+","+hero.getAttack()+","+hero.getDefence()+")") > 0);
+
+        // }catch (ClassNotFoundException e) {
+        //     System.out.println("error: failed to load MySQL driver.");
+        //     e.printStackTrace();
+        //   } catch (SQLException e) {
+        //     System.out.println("error: failed to create a connection object.");
+        //     e.printStackTrace();
+        //   } catch (Exception e) {
+        //     System.out.println("other error:");
+        //     e.printStackTrace();
+        //   } finally {
+        //     try {
+        //       conn.close();
+        //     } catch (Exception e) {
+        //       e.printStackTrace();
+        //      }
+        //    }
+        //    return false;
+        // }
 
     public Boolean updatePlayer(Hero hero){
 

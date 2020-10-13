@@ -16,7 +16,6 @@ public class Main
         GUI theView = new GUI();
         GameController controller = new GameController(theView);
         CreateController create = new CreateController(theView, model);
-        
 
 //        theView.setVisible(true);
 //        DBconn.databaseCon();

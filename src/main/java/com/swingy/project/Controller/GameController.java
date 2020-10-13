@@ -2,6 +2,10 @@ package com.swingy.project.Controller;
 
 import java.awt.event.*;
 
+import com.swingy.project.CurrentPlayer;
+import com.swingy.project.Model.Hero;
+import com.swingy.project.Model.HeroBuilder;
+import com.swingy.project.Model.GameComponents.Movement;
 import com.swingy.project.Model.GameComponents.Narator;
 import com.swingy.project.View.GUI;
 
@@ -10,6 +14,8 @@ public class GameController {
     ChoiceHandler cHandler = new ChoiceHandler();
     TransitionManager tm;
     Narator narator;
+    Movement move = new Movement();
+    Hero hero = new HeroBuilder().getHero();
 
     // private GameModel data;
 
@@ -18,7 +24,7 @@ public class GameController {
         this.theView.createUI(cHandler);
         tm = new TransitionManager(theView);
         tm.showStartScreen();
-        this.narator = new Narator(theView);
+        this.narator = new Narator(hero,move,theView);
     }
 
     public class ChoiceHandler implements ActionListener {
@@ -33,16 +39,16 @@ public class GameController {
                         narator.townGate();
                     break;
                 case "b1":
-                    //tm.showGameScreen();
+                        narator.selectedPosition(move.getPosition1());
                     break;
                 case "b2":
-                        //tm.showGameScreen();
+                        narator.selectedPosition(move.getPosition2());
                     break;
                 case "b3":
-                        //tm.showGameScreen();
+                        narator.selectedPosition(move.getPosition3());
                     break;
                 case "b4":
-                        //tm.showGameScreen();
+                        narator.selectedPosition(move.getPosition4());
                     break;
             
                 default:

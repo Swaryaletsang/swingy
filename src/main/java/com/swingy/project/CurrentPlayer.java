@@ -3,11 +3,8 @@ package com.swingy.project;
 import com.swingy.project.Model.Hero;
 
 import lombok.Getter;
-@Getter
+import lombok.Setter;
+@Setter
 public class CurrentPlayer {
-    Hero hero;
-    public CurrentPlayer(Hero hero){
-        this.hero = hero;
-    }
-
+    public static Hero hero;
 }

@@ -15,7 +15,8 @@ public class GameController {
     TransitionManager tm;
     Narator narator;
     Movement move = new Movement();
-    Hero hero = new HeroBuilder().getHero();
+
+    Hero hero = CurrentPlayer.hero;
 
     // private GameModel data;
 
@@ -24,7 +25,7 @@ public class GameController {
         this.theView.createUI(cHandler);
         tm = new TransitionManager(theView);
         tm.showStartScreen();
-        this.narator = new Narator(hero,move,theView);
+        this.narator = new Narator(move,theView);
     }
 
     public class ChoiceHandler implements ActionListener {

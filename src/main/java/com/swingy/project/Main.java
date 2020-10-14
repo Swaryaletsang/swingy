@@ -12,7 +12,6 @@ public class Main
     {
         //DBconn.databaseCon();
         PlayerModel model = new PlayerModel();
-        // model.getAllPlayers();
         GUI theView = new GUI();
         GameController controller = new GameController(theView);
         CreateController create = new CreateController(theView, model);

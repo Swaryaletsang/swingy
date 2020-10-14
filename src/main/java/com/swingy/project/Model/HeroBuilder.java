@@ -12,6 +12,17 @@ public class HeroBuilder {;
     private int hitPoints;
     private String weapon;
     private String armor;
+    private Hero hero;
+
+    private static HeroBuilder singleton = new HeroBuilder();
+
+    private HeroBuilder(){
+
+    }
+
+    public static HeroBuilder getInstance(){
+        return singleton;
+    }
 
     public HeroBuilder setName(String name){
         this.name = name;
@@ -59,6 +70,11 @@ public class HeroBuilder {;
     }
 
     public Hero getHero(){
-        return new Hero(name, id, level, experience, attack, defence, hitPoints, weapon, armor);
+        this.hero = new Hero(name, id, level, experience, attack, defence, hitPoints, weapon, armor);
+        return this.hero;
+    }
+
+    public Hero getPlayer(){
+         return this.hero; 
     }
 }

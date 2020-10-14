@@ -3,9 +3,10 @@ package com.swingy.project.Controller;
 import com.swingy.project.CurrentPlayer;
 import com.swingy.project.Model.Hero;
 import com.swingy.project.Model.HeroBuilder;
+import com.swingy.project.Model.Player;
 import com.swingy.project.Model.PlayerModel;
 import com.swingy.project.Model.GameComponents.Narator;
-import com.swingy.project.View.ConsoleView;
+// import com.swingy.project.View.ConsoleView;
 import com.swingy.project.View.GUI;
 
 import lombok.Getter;
@@ -18,6 +19,7 @@ public class CreateController {
     private GUI ui;
     private PlayerModel theModel;
     TransitionManager tm;
+
 
     public CreateController(GUI ui, PlayerModel theModel) {
         this.ui = ui;
@@ -41,21 +43,20 @@ public class CreateController {
             }
             
             try {
-                hero = new HeroBuilder()
-                .setName(ui.getName())
-                .setArmor("armor")
-                .setWeapon("knife")
-                .setAttack(20)
-                .setDefence(30)
-                .setExperience(124)
-                .setHitPoints(100)
-                .setLevel(1).getHero();
-                System.out.println(hero.toString());
-                Narator narator = new Narator(hero,null, ui);
-                // CurrentPlayer cp = new CurrentPlayer(hero);
+                Player player = Player.getInstance();
+                player.setName(ui.getName());
+                player.setArmor("armor");
+                player.setWeapon("knife");
+                player.setAttack(20);
+                player.setDefence(30);
+                player.setExperience(124);
+                player.setHitPoints(100);
+                player.setLevel(1);
+                player.toString();
+                theModel.insert();
+                Narator narator = new Narator(null, ui);
                 narator.defaultSetup();
-                //save to database
-              //theModel.createNewPlayer(hero); 
+               
             } catch (Exception e) {
                 //TODO: handle exception
                 ui.checkErr("Please enter name");

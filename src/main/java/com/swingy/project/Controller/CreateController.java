@@ -1,21 +1,13 @@
 package com.swingy.project.Controller;
-
-import com.swingy.project.CurrentPlayer;
-import com.swingy.project.Model.Hero;
-import com.swingy.project.Model.HeroBuilder;
 import com.swingy.project.Model.Player;
 import com.swingy.project.Model.PlayerModel;
 import com.swingy.project.Model.GameComponents.Narator;
 // import com.swingy.project.View.ConsoleView;
 import com.swingy.project.View.GUI;
 
-import lombok.Getter;
-
 import java.awt.event.*;
 
 public class CreateController {
-    // private ConsoleView cView;
-    public static Hero hero;
     private GUI ui;
     private PlayerModel theModel;
     TransitionManager tm;
@@ -53,7 +45,7 @@ public class CreateController {
                 player.setHitPoints(100);
                 player.setLevel(1);
                 player.toString();
-                theModel.insert();
+                // theModel.insert(); database
                 Narator narator = new Narator(null, ui);
                 narator.defaultSetup();
                

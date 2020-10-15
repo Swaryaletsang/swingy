@@ -1,10 +1,6 @@
 package com.swingy.project.Controller;
 
 import java.awt.event.*;
-
-import com.swingy.project.CurrentPlayer;
-import com.swingy.project.Model.Hero;
-import com.swingy.project.Model.HeroBuilder;
 import com.swingy.project.Model.GameComponents.Movement;
 import com.swingy.project.Model.GameComponents.Narator;
 import com.swingy.project.View.GUI;
@@ -15,8 +11,6 @@ public class GameController {
     TransitionManager tm;
     Narator narator;
     Movement move = new Movement();
-
-    Hero hero = CurrentPlayer.hero;
 
     // private GameModel data;
 

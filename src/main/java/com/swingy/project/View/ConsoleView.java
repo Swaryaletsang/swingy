@@ -1,9 +1,11 @@
 package com.swingy.project.View;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.validation.constraints.NotEmpty;
 
+import com.swingy.project.Model.FileStoreHandler;
 import com.swingy.project.Model.Player;
 import com.swingy.project.Model.PlayerModel;
 
@@ -38,7 +40,13 @@ public class ConsoleView {
         player.setHitPoints(100);
         player.setLevel(1);
         player.toString();
-        playGame();
+        int ret = FileStoreHandler.create();
+        if (ret == 0) {
+            createHero();
+        } else {
+          playGame();  
+        }
+        
 
     }
 
@@ -52,7 +60,40 @@ public class ConsoleView {
     }
 
     private void choosePlayer() {
+        System.out.println("\n*********************************\n");
         System.out.println("Choosing a player");
+        ArrayList<String> players = new ArrayList<String>();
+        players = FileStoreHandler.read();
+        for (int i = 0; i < players.size(); i++) {
+            System.out.println(i+": "+players.get(i));
+        }
+        System.out.print("Choice: ");
+        int choice = scan.nextInt();
+        System.out.println("\n*********************************\n");
+
+        if (choice >= 0 && choice <= players.size()){
+            String name = players.get(choice);
+            String playerInfo = FileStoreHandler.read(name);
+            String[] info = playerInfo.split(",");
+
+            player.setName(info[0]);
+            player.setArmor(info[7]);
+            player.setWeapon(info[6]);
+            player.setAttack(Integer.parseInt(info[3]));
+            player.setDefence(Integer.parseInt(info[4]));
+            player.setExperience(Integer.parseInt(info[2]));
+            player.setHitPoints(Integer.parseInt(info[5]));
+            player.setLevel(Integer.parseInt(info[1]));
+            player.toString();
+            playGame();
+
+        }else {
+            System.out.println("wrong entry");
+            System.out.print("Press enter to continue.......");
+            scan2.nextLine();
+            choosePlayer();
+        }
+
     }
 
     private int startChoice() {

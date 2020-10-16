@@ -1,4 +1,5 @@
 package com.swingy.project.Controller;
+import com.swingy.project.Model.FileStoreHandler;
 import com.swingy.project.Model.Player;
 import com.swingy.project.Model.PlayerModel;
 import com.swingy.project.Model.GameComponents.Narator;
@@ -45,6 +46,7 @@ public class CreateController {
                 player.setHitPoints(100);
                 player.setLevel(1);
                 player.toString();
+                FileStoreHandler.create();
                 // theModel.insert(); database
                 Narator narator = new Narator(null, ui);
                 narator.defaultSetup();

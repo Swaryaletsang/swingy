@@ -1,8 +1,10 @@
 package com.swingy.project.View;
 
+import java.nio.file.FileStore;
 import java.util.Random;
 import java.util.Scanner;
 
+import com.swingy.project.Model.FileStoreHandler;
 import com.swingy.project.Model.Player;
 import com.swingy.project.Model.GameComponents.Enemy;
 import com.swingy.project.Model.GameComponents.Vampire;
@@ -38,7 +40,7 @@ public class story {
                 townGate();
             }else {
                 System.out.println("\n*********************************\n");
-                System.out.println("Guard: Wow I heard you killed the "+enemy.name+" \nYou earned the kings respect\n WELCOME TO THE PALACE ROYAL");
+                System.out.println("Guard: Hey "+player.getName()+" I heard you killed the "+enemy.name+" \nYou earned the kings respect\n WELCOME TO THE PALACE ROYAL");
                 System.out.println("\n*********************************\n");
             }
         } else if (choice == 2) {
@@ -49,6 +51,7 @@ public class story {
             player.setHitPoints(hp);
             System.out.println("HP: "+player.getHitPoints());
             System.out.println("\n*********************************\n");
+            FileStoreHandler.update(player.getName());
 
             System.out.print("Press enter to continue.......");
             scan2.nextLine();
@@ -157,6 +160,7 @@ public class story {
         int level = player.getLevel() + 1;
 
         player.setLevel(level);
+        FileStoreHandler.update(player.getName());
         System.out.print("Press enter to continue.......");
         scan2.nextLine();
         townGate();
@@ -172,6 +176,7 @@ public class story {
         System.out.println("\n*********************************\n");
 
         if (player.getHitPoints() > 0) {
+            FileStoreHandler.update(player.getName());
             System.out.print("Press enter to continue.......");
             scan2.nextLine();
             playerAttack();
@@ -185,6 +190,7 @@ public class story {
         System.out.println("You are dead \n\n ****GAME OVER****");
         System.out.println("\n*********************************\n");
         System.out.print("Press enter to continue.......");
+        FileStoreHandler.delete(player.getName());
         scan2.nextLine();
         System.out.println("GOODBYE THANKS FOR PLAYING THE GAME");
     }
@@ -202,6 +208,7 @@ public class story {
         choice = scan.nextInt();
 
         if (choice == 1) {
+            FileStoreHandler.update(player.getName());
             leave();
         }else {
             north();
@@ -224,6 +231,7 @@ public class story {
         choice = scan.nextInt();
 
         if (choice == 1) {
+            FileStoreHandler.update(player.getName());
             leave();
         }else {
             east();

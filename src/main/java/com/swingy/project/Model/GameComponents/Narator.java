@@ -4,6 +4,7 @@ import java.util.Random;
 
 import javax.validation.constraints.NotNull;
 import com.swingy.project.Controller.TransitionManager;
+import com.swingy.project.Model.FileStoreHandler;
 import com.swingy.project.Model.Player;
 import com.swingy.project.View.GUI;
 
@@ -83,6 +84,7 @@ public class Narator {
         theView.storyTextArea.setText("Guard: Hey don't be stupid\n All the Guards attacked you, you received damage \n\n (You lost 3 HP)");
         player.setHitPoints(hp);
         theView.hpNumlbl.setText(""+ player.getHitPoints());
+        FileStoreHandler.update(player.getName());
         theView.chBtn1.setText(">");
         theView.chBtn2.setText("");
         theView.chBtn3.setText("");
@@ -113,6 +115,7 @@ public class Narator {
         theView.storyTextArea.setText("You found food...\n You ate enough food and rested \n\n (You gained 2 HP)");
         player.setHitPoints(hp);
         theView.hpNumlbl.setText(""+ player.getHitPoints());
+        FileStoreHandler.update(player.getName());
         theView.chBtn1.setText("Go south");
         theView.chBtn2.setText("");
         theView.chBtn3.setText("");
@@ -132,6 +135,7 @@ public class Narator {
         player.setAttack(att);
         player.setWeapon(weapon.name);
         theView.weapNamelbl.setText(""+ player.getWeapon());
+        FileStoreHandler.update(player.getName());
         theView.chBtn1.setText("Go west");
         theView.chBtn2.setText("");
         theView.chBtn3.setText("");
@@ -203,6 +207,7 @@ public class Narator {
         player.setHitPoints(playerHp - enemyDamage);
         theView.storyTextArea.setText("The"+enemy.name+" attacked and gave"+enemyDamage+" Damages");
         theView.hpNumlbl.setText(""+ player.getHitPoints());
+        FileStoreHandler.update(player.getName());
 
         theView.chBtn1.setText(">");
         theView.chBtn2.setText("");
@@ -229,6 +234,7 @@ public class Narator {
         int level = player.getLevel() + 1;
 
         player.setLevel(level);
+        FileStoreHandler.update(player.getName());
 
         theView.chBtn1.setText("Go east");
         theView.chBtn2.setText("");
@@ -253,6 +259,7 @@ public class Narator {
         this.move.setPosition2("");
         this.move.setPosition3("");
         this.move.setPosition4("");
+        FileStoreHandler.delete(player.getName());
     }
 
     public void ending(){

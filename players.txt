@@ -1,0 +1,1 @@
+swary,1,124,20,30,85,knife,armor

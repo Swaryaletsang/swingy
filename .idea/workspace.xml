@@ -45,6 +45,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.swingy.project.Main" />
       <module name="swingy" />
+      <option name="PROGRAM_PARAMETERS" value="gui" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.swingy.project.*" />
@@ -85,21 +86,25 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1602641373717">
+    <state x="137" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602820443051">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1602641373717" />
-    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1602641373717">
+    <state x="137" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1602820443051" />
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1602821088539">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1602641373717" />
-    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1602641373717">
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1602821088539" />
+    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1602821088538">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1602641373717" />
-    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1602641373717">
+    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1602821088538" />
+    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1602821088537">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1602641373717" />
+    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1602821088537" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1602821088539">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1602821088539" />
   </component>
 </project>
